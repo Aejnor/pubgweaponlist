@@ -1,0 +1,59 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="{{ gun.imagen }}" width="130" height="200" alt="{{ gun.nombre }}">
+                </div>
+                <div class="col-lg-10 title">
+                    <div class="col-lg-12">
+                        <h1>{{ gun.nombre|raw }}</h1>
+                    </div>
+                    <div class="col-lg-5">
+                        <p>Balas: <strong>{{  gun.balas | raw }}</strong></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row data">
+                <div class="col-lg-2">
+                    <p><strong>Calibre: </strong></p>
+                </div>
+                <div class="col-lg-10">
+                    {% set calibres = gun.calibre|split(', ') %}
+                    {% for calibre in calibres %}
+                    <span class="label label-primary">{{ calibre }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row data">
+                <div class="col-lg-2">
+                    <p><strong>Tipo: </strong></p>
+                </div>
+                <div class="col-lg-10">
+                    {% set tipos = gun.tipo|split(', ') %}
+                    {% for tipo in tipos %}
+                        <span class="label label-success">{{ tipo }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row data">
+                <div class="col-lg-2">
+                    <p><strong>Retroceso: </strong></p>
+                </div>
+                <div class="col-lg-10">
+                    {% set retrocesos = gun.retroceso|split(', ') %}
+                    {% for retroceso in retrocesos %}
+                        <span class="label label-info">{{ retroceso }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

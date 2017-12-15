@@ -10,6 +10,8 @@ Para poder configurar esto desde un principio tendremos que configurar el archiv
 Para importar la base de datos desde la terminal
    ``$ mysql -u username -p < "Archivo de la BDD" `` gracias a poner el archivo, tras conectarse automaticamente te la importa.
    
+   En nuestro caso de llama pubgdb.sql
+   
    ### Instalacion de las dependencias del proyecto
    Desde la terminal, nos situamos en la carpeta donde esta el proyecto e introducimos composer update
    

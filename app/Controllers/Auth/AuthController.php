@@ -23,7 +23,7 @@ class AuthController extends BaseController {
 
         if($validator->validate($_POST)){
             $user = User::where('email', $_POST['inputEmail'])->first();
-
+            if ($user) {
                 if (password_verify($_POST['inputPassword'], $user->password)) {
                     $_SESSION['userId'] = $user->id;
                     $_SESSION['userName'] = $user->name;
@@ -32,7 +32,7 @@ class AuthController extends BaseController {
                     header('Location: ' . BASE_URL);
                     return null;
                 }
-
+            }
                 $validator->addMessage('authError', 'Los datos son incorrectos');
 
         }

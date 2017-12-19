@@ -27,13 +27,16 @@ class InvitationController extends BaseController {
         $validator->add('inputEmail:Email', 'required', [],'El {label} es obligatorio');
 
 
+
         if ($validator->validate($_POST)){
             $invitation = new Invitation();
 
             $invitation->email = $_POST['inputEmail'];
             $invitation->used = 0;
 
+
             $invitation->save();
+
 
         }else{
             $errors = $validator->getMessages();

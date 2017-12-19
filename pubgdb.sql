@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2017 at 10:35 PM
+-- Generation Time: Dec 19, 2017 at 06:08 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -51,6 +51,33 @@ INSERT INTO `gun` (`id`, `imagen`, `nombre`, `calibre`, `tipo`, `balas`, `retroc
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `invitations`
+--
+
+CREATE TABLE `invitations` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `used` tinyint(4) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `invitations`
+--
+
+INSERT INTO `invitations` (`id`, `email`, `used`, `created_at`, `updated_at`) VALUES
+(1, 'email@mail.com', 0, '2017-12-19 17:29:04', '2017-12-19 17:29:04'),
+(2, 'test@test.test', 0, '2017-12-19 17:31:04', '2017-12-19 17:31:04'),
+(3, 'adolfo@invite.me', 0, '2017-12-19 17:32:47', '2017-12-19 17:32:47'),
+(21, 'email@mail.com', 0, '2017-12-19 17:54:19', '2017-12-19 17:54:19'),
+(22, 'email@mail.com', 0, '2017-12-19 17:54:21', '2017-12-19 17:54:21'),
+(23, 'email@mail.com', 0, '2017-12-19 17:54:27', '2017-12-19 17:54:27'),
+(24, 'email@mail.com', 0, '2017-12-19 17:54:32', '2017-12-19 17:54:32');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -82,6 +109,12 @@ ALTER TABLE `gun`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `invitations`
+--
+ALTER TABLE `invitations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -96,6 +129,11 @@ ALTER TABLE `user`
 --
 ALTER TABLE `gun`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `invitations`
+--
+ALTER TABLE `invitations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `user`
 --

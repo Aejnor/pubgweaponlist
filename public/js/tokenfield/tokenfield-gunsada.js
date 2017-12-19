@@ -11,7 +11,7 @@ calibre.initialize();
 
 $('#inputCalibre').tokenfield({
     typeahead: [null, {
-        source: basedon.ttAdapter(),
+        source: calibre.ttAdapter(),
         displayKey: 'value' }]
 });
 
@@ -28,7 +28,7 @@ tipo.initialize();
 
 $('#inputTipo').tokenfield({
     typeahead: [null, {
-        source: origin.ttAdapter(),
+        source: tipo.ttAdapter(),
         displayKey: 'value' }]
 });
 
@@ -45,6 +45,6 @@ retroceso.initialize();
 
 $('#inputRetroceso').tokenfield({
     typeahead: [null, {
-        source: arch.ttAdapter(),
+        source: retroceso.ttAdapter(),
         displayKey: 'value' }]
 });
